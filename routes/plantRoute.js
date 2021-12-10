@@ -1,6 +1,6 @@
 const express = require('express');
 const plantRoutes = express.Router();
-const plantController = require('../controllers/userController');
+const plantController = require('../controllers/plantController');
 
 plantRoutes.get('/', plantController.index)
 
