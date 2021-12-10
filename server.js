@@ -16,7 +16,7 @@ app.use('/user', userRoute)
 const plantRoute = require('./routes/plantRoute')
 app.use('/plant', plantRoute)
 
-const orderRoute = requre('./routes/orderRoute')
+const orderRoute = require('./routes/orderRoute')
 app.use('/order', orderRoute)
 
 app.listen(3001, () => {
