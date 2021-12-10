@@ -13,6 +13,11 @@ const models = require('./models')
 const userRoute = require('./routes/userRoute')
 app.use('/user', userRoute)
 
+const plantRoute = require('/routes/plantRoute')
+app.use('/plant', userRoute)
+
+const orderRoute = requre('./routes/orderRoute')
+app.use('/order', orderRoute)
 
 app.listen(3001, () => {
     routesReport.print()
