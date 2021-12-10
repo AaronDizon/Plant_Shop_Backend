@@ -20,7 +20,7 @@ userController.login = async (req, res) => {
         })
         if(user.password === req.body.password) {
             res.json({user})
-        }
+        } 
     }catch (err) {
         console.log(err)
     }
