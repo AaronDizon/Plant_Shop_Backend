@@ -14,7 +14,7 @@ const userRoute = require('./routes/userRoute')
 app.use('/user', userRoute)
 
 const plantRoute = require('./routes/plantRoute')
-app.use('/plant', userRoute)
+app.use('/plant', plantRoute)
 
 const orderRoute = requre('./routes/orderRoute')
 app.use('/order', orderRoute)
