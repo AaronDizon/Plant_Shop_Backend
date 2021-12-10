@@ -13,7 +13,7 @@ const models = require('./models')
 const userRoute = require('./routes/userRoute')
 app.use('/user', userRoute)
 
-const plantRoute = require('/routes/plantRoute')
+const plantRoute = require('./routes/plantRoute')
 app.use('/plant', plantRoute)
 
 const orderRoute = requre('./routes/orderRoute')
