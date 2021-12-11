@@ -14,7 +14,7 @@ plantController.index = async (req,res) => {
 plantController.viewOnePlant = async (req,res) => {
     try {
         const plant = await models.plant.findOne({
-            where: {id: req.body.plantId}
+            where: {id: req.params.plantId}
             })
         res.json({ plant })
     } catch (err) {
