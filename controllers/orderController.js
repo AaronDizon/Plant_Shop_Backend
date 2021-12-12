@@ -3,23 +3,44 @@ const orderController = {}
 
 orderController.createOrder = async (req, res) => {
     try {
-        const newOrder = await models.create({
-            shipping_address: req.body.name,
-            credit_card_number: req.body.email,
-            total_price: req.body.password
+        const user= await models.user.findOne({
+            where:{
+                id:req.params.id
+            }
         })
-        res.json({newOrder})
+
+        const userOrder = await user.createOrder({
+            shipping_address: req.body.shipping_address,
+            credit_card_number: req.body.credit_card_number,
+            total_price: req.body.total
+        })
+
+        await userOrder.addPlants(
+          [
+                id=req.body.plantOrder 
+          
+        ]
+        )
+       
+        res.json({userOrder})
     } catch (err) {
-        res.status(400).json({ error: error.message })
+        console.log(err)
     }
 
 }
-orderController.function = async (req, res) => {
+orderController.orderPlant = async (req, res) => {
     try {
         const order = await models.findOne({
             where: {id: req.params.orderId}
         })
-        ewa.json({order})
+
+        const plant = await models.findOne({
+            where:{
+                id:req.body.id
+            }
+        })
+        const association = order.addPlants(plant)
+        res.json({association})
     } catch (err) {
         res.status(400).json({ error: error.message })
     }

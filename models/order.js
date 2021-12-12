@@ -29,10 +29,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     total_price: {
-      type: DataTypes.INTEGER, allowNull: false,
-      validate: {
-        notNull: true
-      }
+      type: DataTypes.INTEGER
+      // validate: {
+      //   notNull: true
+      // }
     },
     userId: DataTypes.INTEGER
   }, {
