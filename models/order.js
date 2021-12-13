@@ -34,7 +34,8 @@ module.exports = (sequelize, DataTypes) => {
       //   notNull: true
       // }
     },
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    date: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'order',

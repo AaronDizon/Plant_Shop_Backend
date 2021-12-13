@@ -10,7 +10,7 @@ orderRoutes.post('/:id', orderController.createOrder)
 orderRoutes.get('/:userId', orderController.getOrders)
 
 //gets an indivudal order by its id
-//orderRoutes.get('/:orderId', orderController.selectOrder)
+orderRoutes.get('/orderinfo/:orderId', orderController.getOrderInfo)
 
 
 

@@ -11,6 +11,7 @@ orderController.createOrder = async (req, res) => {
         })
 
         const userOrder = await user.createOrder({
+            date: req.body.date,
             shipping_address: req.body.shipping_address,
             credit_card_number: req.body.credit_card_number,
             total_price: req.body.total
@@ -39,6 +40,21 @@ orderController.getOrders = async (req, res) => {
         res.status(400).json({ error: error.message })
     }
 
+}
+
+orderController.getOrderInfo = async (req, res) => {
+    try {
+        const order = await models.order.findOne({
+            where: {
+                id: req.params.orderId
+            }
+        })
+        const plants = await order.getPlants()
+
+        res.json({order, plants})
+    } catch (err) {
+        res.status(400).json({ error: error.message })
+    }
 }
 
 module.exports = orderController
