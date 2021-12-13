@@ -5,6 +5,10 @@ const orderController = require('../controllers/orderController');
 orderRoutes.post('/:id', orderController.createOrder)
 // orderRoutes.post('/:id', orderController.createOrder)
 
+
+//gets all the orders of a user 
+orderRoutes.get('/:userId', orderController.getOrders)
+
 //gets an indivudal order by its id
 //orderRoutes.get('/:orderId', orderController.selectOrder)
 

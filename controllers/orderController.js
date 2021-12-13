@@ -25,9 +25,16 @@ orderController.createOrder = async (req, res) => {
 
 }
 
-orderController.function = async (req, res) => {
+orderController.getOrders = async (req, res) => {
     try {
+        const user = await models.user.findOne({
+            where: {
+                id: req.params.userId
+            }
+        })
+        const orders = await user.getOrders()
 
+        res.json({orders})
     } catch (err) {
         res.status(400).json({ error: error.message })
     }
