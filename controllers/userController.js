@@ -37,22 +37,6 @@ userController.verifyUser = async (req, res) => {
         res.json({err})
     }
 }
-userController.getUserOrders = async (req, res) => {
-    try{
-        const user = await models.findOne({
-            where: {id : req.params.userId} 
-        })
-        user.getOrders()
-    }catch (err) {
-        console.log(err)
-    }
-}
-userController.getOrderItems = async (req, res) => {
-    try{
 
-    }catch (err) {
-        console.log(err)
-    }
-}
 
 module.exports = userController

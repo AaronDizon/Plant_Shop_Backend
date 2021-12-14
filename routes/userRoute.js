@@ -8,10 +8,6 @@ userRoutes.post('/login', userController.login)
 
 userRoutes.get('/verify', userController.verifyUser)
 
-userRoutes.get('/order/allOrders/:userId', userController.getUserOrders)
-
-userRoutes.get('/order/:orderId/allItems', userController.getOrderItems)
-
 
 
 
